@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+{% if data %}
+
+    <h1 class="fw-bold mb-4">Tentang Kami</h1>
+
+    <h4 class="text-success">{{ setting.nama_toko }}</h4>
+
+    <p class="text-muted">
+        {{ data.deskripsi }}
+    </p>
+
+    <h5 class="mt-4">Kenapa Memilih Kami?</h5>
+
+    <ul>
+        {% for item in data.keunggulan.splitlines %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="mt-4">
+        <a href="https://wa.me/{{ setting.nomor_wa }}" 
+           class="btn btn-success rounded-pill d-flex align-items-center gap-2">
+            <i class="bi bi-whatsapp"></i>
+            Hubungi Kami
+        </a>
+    </div>
+
+{% else %}
+
+    <h3 class="text-center text-muted">Data belum tersedia</h3>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ setting.nama_toko }} | Produk Herbal Terpercaya</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        {% if setting and setting.favicon %}
+        <link rel="icon" type="image/png" href="{{ setting.favicon.url }}">
+        {% else %}
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+        {% endif %}
+        <meta name="description" content="{{ setting.nama_toko }} menyediakan produk herbal dan susu berkualitas dengan pemesanan mudah via WhatsApp.">
+</head>
+
+    <body>
+        <!--bagian nav-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
+    <div class="container">
+
+        <!-- 🔹 LOGO (KIRI) -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+            {% if setting.logo %}
+                <img src="{{ setting.logo.url }}" 
+                     style="height:35px;">
+            {% endif %}
+            <span class="fw-bold">{{ setting.nama_toko }}</span>
+        </a>
+
+        <!-- TOGGLER (MOBILE) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 🔹 MENU (TENGAH) -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav gap-3">
+
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="/">Beranda</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="#produk">Katalog</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="{% url 'artikel' %}">Artikel</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="{% url 'tentang' %}">Tentang</a>
+                </li>
+
+            </ul>
+        </div>
+
+        <!-- 🔹 CTA (KANAN) -->
+        <div class="d-none d-lg-block">
+            <a href="https://wa.me/{{ setting.nomor_wa }}" 
+               class="btn btn-success rounded-pill px-4">
+                <i class="bi bi-whatsapp"></i> Pesan
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+    <!-- isi konten-->
+     <div class="container py-4">
+        {% block content%}
+        {% endblock%}
+     </div>
+     
+     <a href="https://wa.me/{{ setting.nomor_wa }}" class="wa-float">
+            <i class="bi bi-whatsapp"></i>
+    </a>
+
+<footer class="footer-custom text-white mt-5 pt-5 pb-3">
+
+    <div class="container">
+
+        <div class="row">
+
+            <!-- 🔹 BRANDING -->
+            <div class="col-md-4 mb-4">
+                <h5 class="footer-text">{{ setting.nama_toko }}</h5>
+                <p class="small footer-text">
+                    Menyediakan produk herbal dan susu berkualitas untuk kesehatan Anda dan keluarga.
+                </p>
+            </div>
+
+            <!-- 🔹 MENU -->
+            <div class="col-md-4 mb-4">
+                <h6 class="fw-semibold">Menu</h6>
+                <ul class="list-unstyled">
+
+                    <li>
+                        <a href="/" class="footer-link">Beranda</a>
+                    </li>
+
+                    <li>
+                        <a href="#produk" class="footer-link">Katalog</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'artikel' %}" class="footer-link">Artikel</a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'tentang' %}" class="footer-link">Tentang</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- 🔹 KONTAK -->
+            <div class="col-md-4 mb-4">
+                <h6 class="fw-semibold">Hubungi Kami</h6>
+
+                <p class="small mb-2">
+                    <i class="bi bi-whatsapp"></i> {{ setting.nomor_wa }}
+                </p>
+
+                <a href="https://wa.me/{{ setting.nomor_wa }}" 
+                   class="btn btn-success btn-sm rounded-pill">
+                    Chat WhatsApp
+                </a>
+            </div>
+
+        </div>
+
+        <!-- 🔹 COPYRIGHT -->
+        <hr class="border-secondary">
+
+        <div class="text-center small text-muted">
+            © 2026 {{ setting.nama_toko }}. All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+   
+</html>

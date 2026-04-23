@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+
+            <!-- Judul -->
+            <h1 class="fw-bold mb-3">{{ data.judul }}</h1>
+
+            <!-- Meta -->
+            <p class="text-muted mb-4">
+                Dipublikasikan pada {{ data.tanggal|date:"d M Y" }}
+            </p>
+
+            <!-- Gambar -->
+            {% if data.gambar %}
+            <img src="{{ data.gambar.url }}" 
+                 class="img-fluid rounded mb-4 shadow-sm artikel-detail-img">
+            {% endif %}
+
+            <!-- Konten -->
+            <div class="artikel-content">
+                {{ data.konten|linebreaks }}
+            </div>
+
+            <!-- CTA WhatsApp -->
+            <div class="mt-5 p-4 bg-light rounded text-center shadow-sm">
+                <h5 class="fw-semibold mb-2">
+                    Tertarik dengan produk kami?
+                </h5>
+                <p class="text-muted small mb-3">
+                    Konsultasi langsung via WhatsApp
+                </p>
+
+                <a href="https://wa.me/{{ setting.nomor_wa }}" 
+                   class="btn btn-success rounded-pill px-4">
+                    <i class="bi bi-whatsapp"></i>
+                    Chat Sekarang
+                </a>
+            </div>
+
+            <!-- Tombol kembali -->
+            <div class="mt-4">
+                <a href="{% url 'artikel' %}" class="text-decoration-none">
+                    ← Kembali ke Artikel
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
