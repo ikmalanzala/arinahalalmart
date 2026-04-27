@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,3 +125,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+UNFOLD = {
+    "SITE_TITLE": "Admin Panel",
+    "SITE_HEADER": "Dashboard Toko",
+    "SITE_SUBHEADER": "Management System",
+    "SITE_URL": "/",
+}
+
+TEMPLATES[0]['DIRS'] = [BASE_DIR / 'templates']

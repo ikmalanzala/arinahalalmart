@@ -60,7 +60,7 @@
         <div class="d-none d-lg-block">
             <a href="https://wa.me/{{ setting.nomor_wa }}" 
                class="btn btn-success rounded-pill px-4">
-                <i class="bi bi-whatsapp"></i> Pesan
+                <i class="bi bi-whatsapp"></i> Pesan / Hubungi Kami
             </a>
         </div>
 
@@ -96,39 +96,47 @@
                 <h6 class="fw-semibold">Menu</h6>
                 <ul class="list-unstyled">
 
-                    <li>
-                        <a href="/" class="footer-link">Beranda</a>
-                    </li>
-
-                    <li>
-                        <a href="#produk" class="footer-link">Katalog</a>
-                    </li>
-
-                    <li>
-                        <a href="{% url 'artikel' %}" class="footer-link">Artikel</a>
-                    </li>
-
-                    <li>
-                        <a href="{% url 'tentang' %}" class="footer-link">Tentang</a>
-                    </li>
+                    <li><a href="/" class="footer-link">Beranda</a></li>
+                    <li><a href="#produk" class="footer-link">Katalog</a></li>
+                    <li><a href="{% url 'artikel' %}" class="footer-link">Artikel</a></li>
+                    <li><a href="{% url 'tentang' %}" class="footer-link">Tentang</a></li>
 
                 </ul>
             </div>
 
-            <!-- 🔹 KONTAK -->
-            <div class="col-md-4 mb-4">
-                <h6 class="fw-semibold">Hubungi Kami</h6>
+           
+        <!-- 🔹 KONTAK + MAPS -->
+     
+            <div class="col-md-4">
 
-                <p class="small mb-2">
-                    <i class="bi bi-whatsapp"></i> {{ setting.nomor_wa }}
-                </p>
+            <h6 class="fw-semibold mb-3">Hubungi Kami</h6>
 
-                <a href="https://wa.me/{{ setting.nomor_wa }}" 
-                   class="btn btn-success btn-sm rounded-pill">
-                    Chat WhatsApp
-                </a>
+            <div class="contact-row">
+
+                <!-- WA -->
+                <div class="wa-box">
+                    <p class="small mb-2"> {{ setting.nomor_wa }}</p>
+
+                    <a href="https://wa.me/{{ setting.nomor_wa }}" 
+                    class="btn btn-success btn-sm rounded-pill wa-btn">
+                        <i class="bi bi-whatsapp me-1"></i> WhatsApp
+                    </a>
+                </div>
+
+                <!-- MAPS -->
+                <div class="map-box">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4879.336947271252!2d106.31112468476763!3d-6.3383892456293065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e4211983adbc197%3A0x4b80997b5db2becd!2sT%27Ori%20Coffee!5e1!3m2!1sid!2sid!4v1777037943862!5m2!1sid!2sid"
+                        loading="lazy">
+                    </iframe>
+                </div>
+
             </div>
 
+            </div>
+
+        </div>
+        </div>
         </div>
 
         <!-- 🔹 COPYRIGHT -->
