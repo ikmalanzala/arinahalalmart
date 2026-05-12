@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.template.response import TemplateResponse
 from .models import Produk, Banner, TentangKami, SettingWebsite, Artikel
+from .models import Testimoni
 
 @admin.register(Produk)
 class ProdukAdmin(admin.ModelAdmin):
@@ -38,4 +39,7 @@ class ArtikelAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('judul',)}
     ordering = ('-tanggal',)
 
-    
+@admin.register(Testimoni)
+class TestimoniAdmin(admin.ModelAdmin):
+    list_display = ('namacus',)
+    search_fields = ('namacus',)

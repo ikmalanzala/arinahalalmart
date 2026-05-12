@@ -40,3 +40,18 @@ class Artikel(models.Model):
     tanggal = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.judul
+    
+class Testimoni(models.Model):
+
+    namacus = models.CharField(max_length=100)
+
+    komentar = models.TextField()
+
+    foto = models.ImageField(
+        upload_to='testimoni/',
+        blank=True,
+        null=True
+    )
+
+    def __str__(self):
+        return self.namacus

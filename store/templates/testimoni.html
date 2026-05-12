@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="fw-bold">
+                Testimoni Pelanggan
+            </h2>
+
+            <p class="text-muted">
+                Pendapat pelanggan tentang produk kami
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            {% for t in testimoni %}
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100 testimoni-card">
+
+                    <div class="card-body text-center p-4">
+
+                        {% if t.foto %}
+                        <img src="{{ t.foto.url }}"
+                             class="testimoni-foto mb-3">
+                        {% endif %}
+
+                        <h5 class="fw-bold">
+                            {{ t.namacus }}
+                        </h5>
+
+                        <p class="text-muted">
+                            "{{ t.komentar }}"
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

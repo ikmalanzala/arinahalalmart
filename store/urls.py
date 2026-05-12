@@ -7,4 +7,6 @@ urlpatterns = [
     path('tentang/', views.tentang, name='tentang'),
     path('artikel/', views.artikel_list, name='artikel'),
     path('artikel/<slug:slug>/', views.artikel_detail, name='artikel_detail'),
+    path('katalog/', views.katalog, name='katalog'),
+    path('testimoni/', views.testimoni, name='testimoni'),
 ]

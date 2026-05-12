@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'unfold',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,3 +133,7 @@ UNFOLD = {
 }
 
 TEMPLATES[0]['DIRS'] = [BASE_DIR / 'templates']
+
+ALLOWED_HOSTS = ['*']
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'

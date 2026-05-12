@@ -41,12 +41,17 @@
                     <a class="nav-link fw-semibold" href="/">Beranda</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link fw-semibold" href="#produk">Katalog</a>
+               <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="{% url 'katalog' %}">
+                        Katalog
+                    </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link fw-semibold" href="{% url 'artikel' %}">Artikel</a>
+                </li>
+                 <li class="nav-item">
+                    <a class="nav-link fw-semibold" href="{% url 'testimoni' %}">Testimoni</a>
                 </li>
 
                 <li class="nav-item">
@@ -97,7 +102,7 @@
                 <ul class="list-unstyled">
 
                     <li><a href="/" class="footer-link">Beranda</a></li>
-                    <li><a href="#produk" class="footer-link">Katalog</a></li>
+                    <li><a href="{% url 'katalog' %}" class="footer-link">Katalog</a></li>
                     <li><a href="{% url 'artikel' %}" class="footer-link">Artikel</a></li>
                     <li><a href="{% url 'tentang' %}" class="footer-link">Tentang</a></li>
 
@@ -142,8 +147,8 @@
         <!-- 🔹 COPYRIGHT -->
         <hr class="border-secondary">
 
-        <div class="text-center small text-muted">
-            © 2026 {{ setting.nama_toko }}. All rights reserved.
+        <div class="text-center small text-white">
+            © 2026 {{ setting.nama_toko }}. All rights reserved. | Project Capston Kelas 63 Group B UNIVERSITAS TERBUKA
         </div>
 
     </div>
