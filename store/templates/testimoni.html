@@ -26,21 +26,15 @@
 
                 <div class="card border-0 shadow-sm h-100 testimoni-card">
 
-                    <div class="card-body text-center p-4">
+                    {% if t.foto %}
+                    <img src="{{ t.foto.url }}" class="testimoni-foto">
+                    {% endif %}
 
-                        {% if t.foto %}
-                        <img src="{{ t.foto.url }}"
-                             class="testimoni-foto mb-3">
-                        {% endif %}
-
-                        <h5 class="fw-bold">
-                            {{ t.namacus }}
-                        </h5>
-
+                    <div class="card-body text-center p-3">
+                        <h5 class="fw-bold">{{ t.namacus }}</h5>
                         <p class="text-muted">
-                            "{{ t.komentar }}"
+                            "{{ t.komentar|truncatechars:60 }}"
                         </p>
-
                     </div>
 
                 </div>
